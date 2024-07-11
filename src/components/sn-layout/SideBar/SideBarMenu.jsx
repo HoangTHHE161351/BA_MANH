@@ -227,6 +227,12 @@ const LIST_MENU = [
       },
     ],
   },
+  {
+    id: "historyLog",
+    icon: HomeIcon,
+    text: "HistoryLog",
+    path: PathConstants.HISTORY_LOG,
+  },
 ];
 
 const LIST_MENU_STUDENT = [

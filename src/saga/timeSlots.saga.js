@@ -16,3 +16,17 @@ export function* getTimeSlotsListSaga({ payload }) {
     yield put(timeSlotActions.timeSlotFailure(error));
   }
 }
+
+export function* getScheduleWeeksSaga({ payload }) {
+  try {
+    const response = yield call(TimeSlotService.getScheduleWeeks, payload);
+    if (response.status === ApiConstants.STT_OK) {
+      yield put(timeSlotActions.getScheduleWeeksSuccess(response.data.data));
+    } else {
+      yield put(timeSlotActions.timeSlotFailure(response.data));
+    }
+  } catch (error) {
+    EnvConstants.IS_DEV && console.log(error);
+    yield put(timeSlotActions.timeSlotFailure(error));
+  }
+}

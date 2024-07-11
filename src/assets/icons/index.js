@@ -15,7 +15,6 @@ import UploadIcon from "./UploadIcon";
 import PasswordResetIcon from "./PasswordResetIcon";
 import DeleteIcon from "./DeleteIcon";
 import NotifyIcon from "./NotifyIcon";
-import ArrowDoneIcon from "./ArrowDoneIcon";
 
 export {
   PasswordResetIcon,
@@ -35,5 +34,4 @@ export {
   CloseIcon,
   DeleteIcon,
   NotifyIcon,
-  ArrowDoneIcon
 };

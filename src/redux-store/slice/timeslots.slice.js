@@ -8,6 +8,7 @@ const initialState = {
   searchKey: undefined,
   pagination: DataConstants.PAGINATION_DEFAULT,
   timeSlotsList: [],
+  schoolWeeks: [],
   totalData: 0,
   timeSlotDetail: undefined,
 };
@@ -20,6 +21,14 @@ const reducers = {
     state.isFetching = false;
     state.timeSlotsList = action.payload.content;
     state.totalData = action.payload.totalElements;
+  },
+
+  getScheduleWeeks: (state, action) => {
+    state.isFetching = true;
+  },
+  getScheduleWeeksSuccess: (state, action) => {
+    state.isFetching = false;
+    state.schoolWeeks = action.payload;
   },
 
   getTimeSlotDetail: (state, action) => {

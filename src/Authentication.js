@@ -33,7 +33,7 @@ const Authentication = ({ roles = [] }) => {
 
         const responseData = await response.json();
 
-        if (responseData.code === ApiConstants.STT_OK) {
+        if (response.status === ApiConstants.STT_OK) {
           const userInfo = responseData.data.data;
           dispatch(authActions.getUserProfileSuccess(userInfo));
           setAuthorized(roles.includes(userInfo.roleId));

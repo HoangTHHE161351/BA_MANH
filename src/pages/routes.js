@@ -24,6 +24,8 @@ const TeacherPage = lazy(() => import("./TeacherManager"));
 const TeacherProfile = lazy(() => import("./TeacherManager/Profile.jsx"));
 const HistoryLog = lazy(() => import("./ConfigSystem/HistoryLog"));
 
+const ScheduleStudent = lazy(() => import("./Schedule/ScheduleStudent"));
+
 const publicRoutes = [
   {
     path: PathConstants.LOGIN,
@@ -43,7 +45,7 @@ const publicRoutes = [
   },
 ];
 
-const userRoutes = [
+const popularRoutes = [
   {
     path: PathConstants.ROOT,
     element: HomePage,
@@ -56,7 +58,13 @@ const userRoutes = [
     path: PathConstants.PROFILE,
     element: ProfilePage,
   },
-  { path: PathConstants.SCHEDULE, element: Schedule },
+];
+
+const userRoutes = [
+  {
+    path: PathConstants.SCHEDULE_STUDENT,
+    element: ScheduleStudent,
+  },
 ];
 
 const adminRoutes = [
@@ -106,11 +114,15 @@ const adminRoutes = [
     element: TeacherProfile,
     //Nối đường dẫn đến trang tương ứng
   },
+
   {
     path: PathConstants.HISTORY_LOG,
     element: HistoryLog,
     //Nối đường dẫn đến trang tương ứng
   },
+
+  { path: PathConstants.SCHEDULE, element: Schedule },
+
 ];
 
-export { publicRoutes, userRoutes, adminRoutes };
+export { publicRoutes, popularRoutes, adminRoutes, userRoutes };

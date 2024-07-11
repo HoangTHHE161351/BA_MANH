@@ -57,6 +57,7 @@ export const DELETE_SCHEDULE = "/api/v1/schedule/delete-schedule";
 export const ADD_SCHEDULE = "/api/v1/schedule/add-schedule";
 export const EDIT_SCHEDULE = "/api/v1/schedule/edit-schedule";
 export const IMPORT_SCHEDULE = "/api/v1/schedule/import-schedule";
+export const STUDENT_SCHEDULE = "/api/v1/schedule/student-schedule";
 
 export const GET_SEMESTER_LIST = "/api/v1/semester/all-semester";
 export const CREATE_SEMESTER = "/api/v1/semester/add-semester";
@@ -90,3 +91,4 @@ export const GET_TEACHER_CLASSROOM_LIST = "/api/v1/teacher/teacher-classroom";
 export const GET_ATTENDANCE_REPORT = "/api/v1/attendance/attendance-report";
 export const GET_ATTENDANCE_CLASS = "/api/v1/attendance/attendance-class";
 export const CHECK_ATTENDANCE = "/api/v1/attendance/check-attendance";
+export const GET_WEEKS = "/api/v1/timeslots/weeks";

@@ -30,3 +30,6 @@ export const importSchedule = (data) => {
   const { date, ...body } = data;
   return instanceAPIMain.post(`${ApiConstants.IMPORT_SCHEDULE}?${date}`, body);
 };
+
+export const getScheduleStudent = (params) =>
+  instanceAPIMain.get(ApiConstants.STUDENT_SCHEDULE, { params });

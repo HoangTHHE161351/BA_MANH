@@ -2,22 +2,15 @@ import {
   Avatar,
   Badge,
   Box,
-  Button,
-  Divider,
   IconButton,
-  List,
-  ListItemButton,
-  ListItemText,
-  ListSubheader,
   Popover,
   Stack,
-  Tooltip,
   Typography,
 } from "@mui/material";
 import Cookies from "js-cookie";
 import { memo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowDoneIcon, NotifyIcon } from "src/assets/icons";
+import { NotifyIcon } from "src/assets/icons";
 import MenuIcon from "src/assets/icons/MenuIcon";
 import { ApiConstants, PathConstants } from "src/const";
 
@@ -76,76 +69,16 @@ const TopBar = ({ open, setOpen }) => {
           open={Boolean(anchorElNotify)}
           onClose={() => setAnchorElNotify(null)}
           anchorEl={anchorElNotify}
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          transformOrigin={{ vertical: "top", horizontal: "right" }}
-          PaperProps={{
-            sx: {
-              mt: 1.5,
-              ml: 0.75,
-              width: 360,
-            },
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
           }}
         >
-          <Box sx={{ display: "flex", alignItems: "center", py: 2, px: 2.5 }}>
-            <Box sx={{ flexGrow: 1 }}>
-              <Typography variant="subtitle1">Notifications</Typography>
-              <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                You have 2 unread messages
-              </Typography>
-            </Box>
-            <Tooltip title=" Mark all as read">
-              <IconButton color="primary">
-                <ArrowDoneIcon />
-              </IconButton>
-            </Tooltip>
-          </Box>
-          <Box
-            className="custom-scrollbar"
-            sx={{ height: { xs: 340, sm: "auto" } }}
-          >
-            <List
-              disablePadding
-              subheader={
-                <ListSubheader
-                  disableSticky
-                  sx={{ py: 1, px: 2.5, typography: "overline" }}
-                >
-                  New
-                </ListSubheader>
-              }
-            >
-              <ListItemButton
-                sx={{
-                  py: 1.5,
-                  px: 2.5,
-                  mt: "1px",
-                }}
-              >
-                <ListItemText
-                  primary={"Your order is placed"}
-                  secondary={
-                    <Typography
-                      variant="caption"
-                      sx={{
-                        mt: 0.5,
-                        display: "flex",
-                        alignItems: "center",
-                        color: "text.disabled",
-                      }}
-                    >
-                      about 1 hours ago
-                    </Typography>
-                  }
-                />
-              </ListItemButton>
-            </List>
-          </Box>
-          <Divider sx={{ borderStyle: "dashed" }} />
-          <Box sx={{ p: 1 }}>
-            <Button fullWidth disableRipple>
-              View All
-            </Button>
-          </Box>
+          <Typography sx={{ p: 2 }}>The content of the Popper.</Typography>
         </Popover>
         <Popover
           id="mouse-over-popover"

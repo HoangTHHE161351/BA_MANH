@@ -11,6 +11,7 @@ import HeaderTable from "./HeaderTable";
 import { Paper } from "@mui/material";
 
 const CheckAttendanceTable = ({ data, onCheckAttend, isFetching }) => {
+  console.log("data", data);
   return (
     <Paper
       id="table"

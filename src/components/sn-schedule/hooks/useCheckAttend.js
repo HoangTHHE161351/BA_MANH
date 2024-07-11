@@ -6,7 +6,7 @@ const useCheckAttend = () => {
     const handleCheckAttend = async (scheduleId, body, onSuccess) => {
         try {
             if (!scheduleId || !body) throw new Error("An error occurred!")
-            const response = await AttendanceService.checkAttendance({ scheduleId }, body);
+            const response = await AttendanceService.checkAttendance(scheduleId, body);
             if (response.status === ApiConstants.STT_OK) {
                 AppToastNotify({ type: AppConstants.NOTIFY_TYPE.SUCCESS, message: "Update Attend Success!" })
                 onSuccess()

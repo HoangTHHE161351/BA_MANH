@@ -6,7 +6,8 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import React, { memo } from "react";
+import React, { memo, useMemo } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   ArrowIcon,
@@ -15,32 +16,25 @@ import {
   ScheduleIcon,
   UserManagerIcon,
 } from "src/assets/icons";
-import { PathConstants } from "src/const";
+import { DataConstants, PathConstants } from "src/const";
 
 const SideBarMenu = ({ open }) => {
   const navigate = useNavigate();
   const [openDrop, setOpenDrop] = React.useState(null);
 
-  // const userInfo = Cookies.get(ApiConstants.USER_INFO);
-  // const userData = JSON.parse(userInfo);
+  const userInfo = useSelector((state) => state.authReducer.userInfo);
 
-  // const MenuList = useMemo(() => {
-  //   if (userData.roleId === DataConstants.ROLE.STAFF) {
-  //     return LIST_MENU;
-  //   } else if (userData.roleId === DataConstants.ROLE.TEACHER) {
-  //     return [
-  //       {
-  //         icon: UserManagerIcon,
-  //         text: "User Manager",
-  //         path: PathConstants.USER_MANAGER,
-  //       },
-  //     ];
-  //   }
-  // }, [userData]);
+  const MenuList = useMemo(() => {
+    if (userInfo.roleId === DataConstants.ROLE.STUDENT) {
+      return LIST_MENU_STUDENT;
+    } else {
+      return LIST_MENU;
+    }
+  }, [userInfo]);
 
   return (
     <List>
-      {LIST_MENU.map((item) => (
+      {MenuList.map((item) => (
         <ListItem disablePadding sx={{ display: "block" }} key={item.id}>
           <ListItemButton
             sx={{
@@ -232,5 +226,20 @@ const LIST_MENU = [
         path: PathConstants.TIME_SLOTS,
       },
     ],
+  },
+];
+
+const LIST_MENU_STUDENT = [
+  {
+    id: "home",
+    icon: HomeIcon,
+    text: "Dashboard",
+    path: PathConstants.ROOT,
+  },
+  {
+    id: "schedule",
+    icon: ScheduleIcon,
+    text: "Schedule",
+    path: PathConstants.SCHEDULE_STUDENT,
   },
 ];

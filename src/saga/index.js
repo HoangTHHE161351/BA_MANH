@@ -26,7 +26,7 @@ import {
 import { getStudentListSaga } from "./student.saga";
 import { getDeviceListSaga } from "./device.saga";
 import { getSubjectListSaga } from "./subject.saga";
-import { getScheduleListSaga } from "./schedule.saga";
+import { getScheduleListSaga, getScheduleStudentSaga } from "./schedule.saga";
 import { getSemesterListSaga } from "./semester.saga";
 import {
   getCurriculumDetailSaga,
@@ -34,8 +34,7 @@ import {
 } from "./curriculum.saga";
 import { getClassListSaga } from "./classes.saga";
 import { getRoomListSaga } from "./room.saga";
-import { getTimeSlotsListSaga } from "./timeSlots.saga";
-
+import { getScheduleWeeksSaga, getTimeSlotsListSaga } from "./timeSlots.saga";
 import { getTeacherListSaga } from "./teacher.saga";
 
 function* rootSaga() {
@@ -50,6 +49,7 @@ function* rootSaga() {
     takeLatest(studentActions.getStudentList.type, getStudentListSaga),
     takeLatest(subjectActions.getSubjectList.type, getSubjectListSaga),
     takeLatest(scheduleActions.getScheduleList.type, getScheduleListSaga),
+    takeLatest(scheduleActions.getScheduleStudent.type, getScheduleStudentSaga),
     takeLatest(
       semesterActions.getSemesterListRequest.type,
       getSemesterListSaga
@@ -62,6 +62,7 @@ function* rootSaga() {
     takeLatest(classesActions.getClassesList.type, getClassListSaga),
     takeLatest(roomActions.getRoomList.type, getRoomListSaga),
     takeLatest(timeSlotActions.getTimeSlotsList.type, getTimeSlotsListSaga),
+    takeLatest(timeSlotActions.getScheduleWeeks.type, getScheduleWeeksSaga),
     takeLatest(teacherActions.getTeacherList.type, getTeacherListSaga),
   ]);
 }

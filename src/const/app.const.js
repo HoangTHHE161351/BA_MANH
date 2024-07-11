@@ -22,3 +22,10 @@ export const NOTIFY_TYPE = {
   WARNING: "warning",
   INFO: "info",
 };
+
+export const LIST_SCHOOL_YEAR = [
+  { id: 2021, label: "2021" },
+  { id: 2022, label: "2022" },
+  { id: 2023, label: "2023" },
+  { id: 2024, label: "2024" },
+];

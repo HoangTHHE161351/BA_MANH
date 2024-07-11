@@ -1,5 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { userRoutes, publicRoutes, adminRoutes } from "./pages/routes";
+import {
+  userRoutes,
+  publicRoutes,
+  adminRoutes,
+  popularRoutes,
+} from "./pages/routes";
 import ThemeProvider from "./theme";
 import MainLayout from "./layouts/MainLayout";
 import { Suspense } from "react";
@@ -50,12 +55,44 @@ function App() {
               element={
                 <Authentication
                   roles={[
+                    DataConstants.ROLE.STUDENT,
                     DataConstants.ROLE.TEACHER,
                     DataConstants.ROLE.STAFF,
                     DataConstants.ROLE.ADMIN,
                   ]}
                 />
               }
+            >
+              {popularRoutes.map((route) => {
+                const PrivatePage = route.element;
+                const Layout = route.layout || MainLayout;
+                return (
+                  <Route
+                    key={route.path}
+                    path={route.path}
+                    element={
+                      <Layout>
+                        <Suspense
+                          fallback={
+                            <Box
+                              width={"100%"}
+                              display={"flex"}
+                              justifyContent={"center"}
+                            >
+                              <CircularProgress />
+                            </Box>
+                          }
+                        >
+                          <PrivatePage />
+                        </Suspense>
+                      </Layout>
+                    }
+                  />
+                );
+              })}
+            </Route>
+            <Route
+              element={<Authentication roles={[DataConstants.ROLE.STUDENT]} />}
             >
               {userRoutes.map((route) => {
                 const PrivatePage = route.element;

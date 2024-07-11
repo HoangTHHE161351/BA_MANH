@@ -13,3 +13,6 @@ export const editTimeSlot = (id, data) =>
 
 export const deleteTimeSlot = (id) =>
   instanceAPIMain.delete(stringFormat(ApiConstants.DELETE_TIME_SLOT, { id }));
+
+export const getScheduleWeeks = (params) =>
+  instanceAPIMain.get(ApiConstants.GET_WEEKS, { params });

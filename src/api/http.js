@@ -43,10 +43,11 @@ const request = async (method, url, options) => {
 
 const apiRequest = {
   get(url, options) {
-    const { params, ...otherOptions } = options;
+    const [params, ...otherOptions] = options;
     if (params) {
-      const urlParams = new URLSearchParams(params);
-      url += `?${urlParams.toString()}`;
+      Array(params).forEach((param) => {
+        url += `?${param}=${options.params[param]}`;
+      });
     }
     return request("GET", url, otherOptions);
   },
@@ -54,12 +55,7 @@ const apiRequest = {
     return request("POST", url, options);
   },
   put(url, options) {
-    const { params, ...otherOptions } = options;
-    if (params) {
-      const urlParams = new URLSearchParams(params);
-      url += `?${urlParams.toString()}`;
-    }
-    return request("PUT", url, otherOptions);
+    return request("PUT", url, options);
   },
   delete(url, options) {
     return request("DELETE", url, options);

@@ -52,4 +52,10 @@ const HEADER_CELL = [
     align: "center",
     width: 150,
   },
+  {
+    id: "historyLog",
+    label: "History Log",
+    align: "center",
+    width: 150,
+  }
 ];

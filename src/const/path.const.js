@@ -36,3 +36,4 @@ export const CAMERA_ROOM = "/camera-room";
 export const TEACHER = "/teacher";
 
 export const TEACHER_PROFILE = "/teacher-profile";
+export const STRANGER_MONITOR = "/strange_monitor";

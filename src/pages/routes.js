@@ -23,7 +23,7 @@ const TimeSlotsPage = lazy(() => import("./ConfigSystem/TimeSlots"));
 const TeacherPage = lazy(() => import("./TeacherManager"));
 const TeacherProfile = lazy(() => import("./TeacherManager/Profile.jsx"));
 const ScheduleStudent = lazy(() => import("./Schedule/ScheduleStudent"));
-
+const StrangeMonitor = lazy(() => import("./StrangeMonitor/index.jsx"));
 const publicRoutes = [
   {
     path: PathConstants.LOGIN,
@@ -113,6 +113,11 @@ const adminRoutes = [
     //Nối đường dẫn đến trang tương ứng
   },
   { path: PathConstants.SCHEDULE, element: Schedule },
+  {
+    path: PathConstants.STRANGER_MONITOR,
+    element: StrangeMonitor,
+    //Nối đường dẫn đến trang tương ứng
+  }
 ];
 
 export { publicRoutes, popularRoutes, adminRoutes, userRoutes };

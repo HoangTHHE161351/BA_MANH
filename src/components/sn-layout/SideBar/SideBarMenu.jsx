@@ -227,6 +227,13 @@ const LIST_MENU = [
       },
     ],
   },
+  ,
+  {
+    id: "strange",
+    icon: UserManagerIcon,
+    text: "Stranger Monitor",
+    path: PathConstants.STRANGER_MONITOR,
+  }
 ];
 
 const LIST_MENU_STUDENT = [

@@ -22,6 +22,7 @@ const RoomPage = lazy(() => import("./ConfigSystem/Room"));
 const TimeSlotsPage = lazy(() => import("./ConfigSystem/TimeSlots"));
 const TeacherPage = lazy(() => import("./TeacherManager"));
 const TeacherProfile = lazy(() => import("./TeacherManager/Profile.jsx"));
+const HistoryLog = lazy(() => import("./ConfigSystem/HistoryLog"));
 
 const publicRoutes = [
   {
@@ -103,6 +104,11 @@ const adminRoutes = [
   {
     path: PathConstants.TEACHER_PROFILE,
     element: TeacherProfile,
+    //Nối đường dẫn đến trang tương ứng
+  },
+  {
+    path: PathConstants.HISTORY_LOG,
+    element: HistoryLog,
     //Nối đường dẫn đến trang tương ứng
   },
 ];

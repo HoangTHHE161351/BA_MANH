@@ -227,13 +227,19 @@ const LIST_MENU = [
       },
     ],
   },
+  {
+    id: "historyLog",
+    icon: HomeIcon,
+    text: "HistoryLog",
+    path: PathConstants.HISTORY_LOG,
+  },
   ,
   {
     id: "strange",
     icon: UserManagerIcon,
     text: "Stranger Monitor",
     path: PathConstants.STRANGER_MONITOR,
-  }
+  },
 ];
 
 const LIST_MENU_STUDENT = [

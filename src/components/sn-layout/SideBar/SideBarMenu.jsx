@@ -239,6 +239,12 @@ const LIST_MENU = [
     text: "Attendance Report",
     path: PathConstants.ATTENDANCE_REPORT,
   },
+  {
+    id: "attendanceManager",
+    icon: HomeIcon,
+    text: "Attendance Manager",
+    path: PathConstants.ATTENDANCE_MANAGER,
+  },
 ];
 
 const LIST_MENU_STUDENT = [

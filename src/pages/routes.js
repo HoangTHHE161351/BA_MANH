@@ -23,6 +23,7 @@ const TimeSlotsPage = lazy(() => import("./ConfigSystem/TimeSlots"));
 const TeacherPage = lazy(() => import("./TeacherManager"));
 const TeacherProfile = lazy(() => import("./TeacherManager/Profile.jsx"));
 const HistoryLog = lazy(() => import("./ConfigSystem/HistoryLog"));
+const AttendanceReport = lazy(() => import("./AttendanceReport/index"));
 
 const ScheduleStudent = lazy(() => import("./Schedule/ScheduleStudent"));
 
@@ -122,6 +123,8 @@ const adminRoutes = [
   },
 
   { path: PathConstants.SCHEDULE, element: Schedule },
+
+  { path: PathConstants.ATTENDANCE_REPORT, element: AttendanceReport },
 
 ];
 

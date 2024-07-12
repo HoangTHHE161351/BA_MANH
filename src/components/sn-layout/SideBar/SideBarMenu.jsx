@@ -233,6 +233,12 @@ const LIST_MENU = [
     text: "HistoryLog",
     path: PathConstants.HISTORY_LOG,
   },
+  {
+    id: "attendanceReport",
+    icon: HomeIcon,
+    text: "Attendance Report",
+    path: PathConstants.ATTENDANCE_REPORT,
+  },
 ];
 
 const LIST_MENU_STUDENT = [
@@ -248,4 +254,5 @@ const LIST_MENU_STUDENT = [
     text: "Schedule",
     path: PathConstants.SCHEDULE_STUDENT,
   },
+  
 ];

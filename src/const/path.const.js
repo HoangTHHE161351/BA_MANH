@@ -37,4 +37,5 @@ export const TEACHER = "/teacher";
 
 export const TEACHER_PROFILE = "/teacher-profile";
 export const HISTORY_LOG = "/history-log";
+export const ATTENDANCE_REPORT = "/attendance-report";
 

@@ -46,7 +46,7 @@ export const EXPORT_STUDENT = "/api/v1/student/export-student";
 export const GET_DEVICE_LIST = "/api/v1/camera/camera";
 export const CREATE_CAMERA = "/api/v1/camera/add-camera";
 
-export const GET_SUBJECT_LIST = "/api/v1/subject/subject";
+export const GET_SUBJECT_LIST = "/api/v1/subject/search-subject";
 export const CREATE_SUBJECT = "/api/v1/subject/add-subject";
 export const EDIT_SUBJECT = "/api/v1/subject/{id}";
 export const EXPORT_SUBJECT = "/api/v1/student/";

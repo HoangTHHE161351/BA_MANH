@@ -50,10 +50,10 @@ const ScheduleDetailModal = ({ data, open, onClose }) => {
     } else {
       handleCreateSchedule({
         ...dataSubmit,
-        subjectCode: dataSubmit?.subjectCode,
+        subjectCode: dataSubmit?.subjectCode?.id,
         date: dataSubmit?.date?.format(AppConstants.DATE_FORMAT),
-        className: dataSubmit?.className,
-        teacherCode: dataSubmit?.teacherCode,
+        className: dataSubmit?.className?.id,
+        teacherCode: dataSubmit?.teacherCode?.id,
         status: dataSubmit?.status
           ? DataConstants.STATUS_TYPE.ACTIVE
           : DataConstants.STATUS_TYPE.INACTIVE,

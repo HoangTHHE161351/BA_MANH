@@ -39,12 +39,6 @@ const HeaderCell = [
     align: "left",
   },
   {
-    id: "className",
-    label: "Class Name",
-    align: "left",
-  },
-  { id: "subject", label: "Subject", align: "left" },
-  {
     id: "checkIn",
     label: "Check In",
     align: "left",

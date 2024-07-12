@@ -52,9 +52,8 @@ const ScheduleModalImport = ({ isOpen, onClose }) => {
         reader.readAsArrayBuffer(file);
     };
 
-    const sheetId = '1TDie2SoF7Oi-SSI4RQjhWUuzkz8oMREZIJWwH4fv2zw';
+    const sheetId = '1Yzkl7IIrX-OeUZqyfJP1afok497EtdVypYjZj-bnX_g';
     const exportUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=xlsx&id=${sheetId}`;
-
 
     const downloadExcel = async () => {
         try {

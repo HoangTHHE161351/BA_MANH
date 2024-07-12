@@ -1,6 +1,7 @@
 import React, { memo, useState } from "react";
 import { AppTableRow, AppTableCell } from "src/components/Common/TableCommon"; // Ví dụ import các thành phần cần thiết
 import Switch from "@mui/material/Switch"; // Import Switch từ Material-UI
+import { Typography } from "@mui/material";
 
 const TableRowComponent = ({ index }) => {
   // Giả định dữ liệu sinh viên và trạng thái điểm danh
@@ -38,6 +39,7 @@ const TableRowComponent = ({ index }) => {
     <>
       {studentsData.map((student) => (
         <AppTableRow key={student.id}>
+          <Typography>ádfasdf</Typography>
           <AppTableCell align="center">{index + 1}</AppTableCell>
           <AppTableCell align="left">{student.studentName}</AppTableCell>
           <AppTableCell align="left">{student.date}</AppTableCell>

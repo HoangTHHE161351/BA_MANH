@@ -1,5 +1,5 @@
-import { Grid, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
-import React, { memo, useCallback } from "react";
+import { Box, Button, Grid } from "@mui/material";
+import React, { memo, useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppSearchDebounce } from "src/components/Common";
 import { roomActions } from "src/redux-store/store";
@@ -7,9 +7,15 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 const HeaderPageTable = () => {
   const dispatch = useDispatch();
+  const [open, setOpen] = useState(false);
   const { searchKey } = useSelector((state) => state.classesReducer);
 
   const handleChangeSearchKey = useCallback(
@@ -19,16 +25,20 @@ const HeaderPageTable = () => {
     [dispatch]
   );
 
-  const [room, setRoom] = React.useState('');
+  const [semester, setSemester] = React.useState('');
   const [classroom, setClassroom] = React.useState('');
 
-  const handleChange = (event) => {
-    setRoom(event.target.value);
+  const handleChangeSemester = (event) => {
+    setSemester(event.target.value);
+  };
+
+  const handleChangeClassroom = (event) => {
+    setClassroom(event.target.value);
   };
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={4} sm={4} md={2}>
+      <Grid item xs={4} sm={6} md={3}>
         <AppSearchDebounce
           onChangeValue={handleChangeSearchKey}
           fullWidth
@@ -38,22 +48,14 @@ const HeaderPageTable = () => {
           }}
         />
       </Grid>
-      <Grid item xs={10} ml={2} sm={2} mt={-1}>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DemoContainer components={['DatePicker']}>
-            <DatePicker label="Choose Date" />
-          </DemoContainer>
-        </LocalizationProvider>
-      </Grid>
-      <Grid item xs={6} sm={1} md={1}>
+      <Grid item xs={2} sm={2}>
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-readonly-label">Room</InputLabel>
+          <InputLabel id="semester-label">Semester</InputLabel>
           <Select
-            labelId="demo-simple-select-readonly-label"
-            id="demo-simple-select-readonly"
-            value={room}
-            onChange={handleChange}
-            inputProps={{ readOnly: true }}
+            labelId="semester-label"
+            value={semester}
+            label="Semester"
+            onChange={handleChangeSemester}
           >
             <MenuItem value="">
               <em>None</em>
@@ -64,15 +66,14 @@ const HeaderPageTable = () => {
           </Select>
         </FormControl>
       </Grid>
-      <Grid item xs={2} sm={3} md={1.3}>
+      <Grid item xs={2} sm={2}>
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-readonly-label">Classroom</InputLabel>
+          <InputLabel id="subject-label">Classroom</InputLabel>
           <Select
-            labelId="demo-simple-select-readonly-label"
-            id="demo-simple-select-readonly"
+            labelId="subject-label"
             value={classroom}
-            onChange={handleChange}
-            inputProps={{ readOnly: true }}
+            label="Classroom"
+            onChange={handleChangeClassroom}
           >
             <MenuItem value="">
               <em>None</em>

@@ -233,6 +233,18 @@ const LIST_MENU = [
     text: "HistoryLog",
     path: PathConstants.HISTORY_LOG,
   },
+  {
+    id: "attendanceReport",
+    icon: HomeIcon,
+    text: "Attendance Report",
+    path: PathConstants.ATTENDANCE_REPORT,
+  },
+  {
+    id: "attendanceManager",
+    icon: HomeIcon,
+    text: "Attendance Manager",
+    path: PathConstants.ATTENDANCE_MANAGER,
+  },
   ,
   {
     id: "strange",

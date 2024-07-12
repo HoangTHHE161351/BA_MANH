@@ -24,38 +24,48 @@ export default memo(HeaderTable);
 
 const HeaderCell = [
   {
-    id: "roomName",
-    label: "Room Name",
-    align: "left",
-  },
-    {
-    id: "userName",
-    label: "User Name",
+    id: "studentName",
+    label: "Student Name",
     align: "left",
   },
   {
-    id: "fullName",
-    label: "Full Name",
+    id: "date",
+    label: "Date",
     align: "left",
   },
   {
-    id: "checkIn",
-    label: "Check In",
+    id: "slot",
+    label: "Slot",
     align: "left",
   },
   {
-    id: "CheckOut",
-    label: "Check Out",
+    id: "room",
+    label: "Room",
+    align: "left",
+  }, 
+  {
+    id: "classroom",
+    label: "Classroom",
     align: "left",
   },
   {
-    id: "note",
-    label: "Note",
+    id: "lecturer",
+    label: "Lecturer",
     align: "left",
   },
   {
-    id: "history",
-    label: "History detail",
+    id: "subject",
+    label: "Subject",
+    align: "left",
+  }, 
+  {
+    id: "attendanceStatus",
+    label: "Attendance Status",
+    align: "left",
+  },
+  {
+    id: "description",
+    label: "Description",
     align: "left",
   }
 ];

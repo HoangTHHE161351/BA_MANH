@@ -24,8 +24,6 @@ const RowTable = ({ data, index }) => {
         <AppTableCell align="left">{data.roomName}</AppTableCell>
         <AppTableCell align="left">{data.userName}</AppTableCell>
         <AppTableCell align="left">{data.fullName}</AppTableCell>
-        <AppTableCell align="left">{data.className}</AppTableCell>
-        <AppTableCell align="left">{data.subject}</AppTableCell>
         <AppTableCell align="left">{data.checkIn}</AppTableCell>
         <AppTableCell align="left">{data.checkOut}</AppTableCell>
         <AppTableCell align="left">{data.note}</AppTableCell>

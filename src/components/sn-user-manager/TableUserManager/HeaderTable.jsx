@@ -81,4 +81,9 @@ const HeaderCell = [
     label: "Actions",
     align: "left",
   },
+  {
+    id: "facialData",
+    label: "Facial Data",
+    align: "left",
+  },
 ];

@@ -11,12 +11,15 @@ import { DataConstants } from "src/const";
 import { userActions } from "src/redux-store/store";
 import { useDispatch } from "react-redux";
 import { PasswordResetIcon } from "src/assets/icons";
-import { IconButton } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
+import FacialUserDataModal from "../FacialUserDataModal"; 
 
 const RowTable = ({ data, index, onOpenEdit, onOpenReset }) => {
   const dispatch = useDispatch();
   const { handleChangeStatus } = usePostUser();
-
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <AppTableRow>
       <AppTableCell align="center">{index + 1}</AppTableCell>
@@ -86,6 +89,10 @@ const RowTable = ({ data, index, onOpenEdit, onOpenReset }) => {
           <PasswordResetIcon />
         </IconButton>
       </AppTableCell>
+      <AppTableCell align="center">
+        <Button onClick={handleOpen}>View</Button>
+      </AppTableCell>
+      {open && <FacialUserDataModal isOpen={handleOpen} onClose={handleClose} />}
     </AppTableRow>
   );
 };

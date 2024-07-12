@@ -38,17 +38,17 @@ const HeaderPageTable = () => {
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} sm={6} md={3}>
+      <Grid item xs={4} sm={6} md={3}>
         <AppSearchDebounce
           onChangeValue={handleChangeSearchKey}
           fullWidth
           valueInput={searchKey}
           inputProps={{
-            placeholder: "Search Class",
+            placeholder: "Search",
           }}
         />
       </Grid>
-      <Grid item xs={12} sm={3}>
+      <Grid item xs={2} sm={2}>
         <FormControl fullWidth>
           <InputLabel id="semester-label">Semester</InputLabel>
           <Select
@@ -66,7 +66,7 @@ const HeaderPageTable = () => {
           </Select>
         </FormControl>
       </Grid>
-      <Grid item xs={12} sm={3}>
+      <Grid item xs={2} sm={2}>
         <FormControl fullWidth>
           <InputLabel id="subject-label">Classroom</InputLabel>
           <Select

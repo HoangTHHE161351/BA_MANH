@@ -13,8 +13,10 @@ const RowTable = ({ row, order }) => {
       <EditCell />
       <DeleteCell />
       <AppTableCell align="left">{row?.port}</AppTableCell>
-      <AppTableCell align="left">{row?.ipTcpip}</AppTableCell>
-      <AppTableCell align="left">{row?.description}</AppTableCell>
+      <AppTableCell align="left">{row?.ip}</AppTableCell>
+      <AppTableCell align="left">{row?.roomName}</AppTableCell>
+      <AppTableCell align="left">{row?.position}</AppTableCell>
+      <AppTableCell align="left">{row?.type}</AppTableCell>
       <AppTableCell align="center">{row?.status}</AppTableCell>
     </AppTableRow>
   );

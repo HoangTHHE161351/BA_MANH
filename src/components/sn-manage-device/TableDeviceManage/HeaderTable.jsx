@@ -30,6 +30,8 @@ const HeaderCell = [
   },
   { id: "name", label: "Port", align: "left" },
   { id: "ip", label: "IP_Address", align: "left" },
-  { id: "description", label: "Description", align: "left" },
-  { id: "status", label: "Status", align: "center" },
+  { id: "roomName", label: "Room", align: "left" },
+  { id: "typedevice", label: "Type Device", align: "left" },
+  { id: "position", label: "Position", align: "left" },
+  { id: "status", label: "Status", align: "left" },
 ];
